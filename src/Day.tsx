@@ -60,17 +60,17 @@ export function Day<TMessage extends IMessage = IMessage>({
     return null
   }
 
-  const messageDate = moment(currentMessage.createdAt);
-  const today = moment();
-  const yesterday = moment().subtract(1, 'day');
+  const messageDate = moment(currentMessage.createdAt)
+  const today = moment()
+  const yesterday = moment().subtract(1, 'day')
 
-  let dayLabel;
+  let dayLabel
   if (messageDate.isSame(today, 'day')) {
-    dayLabel = 'Today';
+    dayLabel = 'Today'
   } else if (messageDate.isSame(yesterday, 'day')) {
-    dayLabel = 'Yesterday';
+    dayLabel = 'Yesterday'
   } else {
-    dayLabel = messageDate.format('MMMM DD, dddd');
+    dayLabel = messageDate.format('MMMM DD, dddd')
   }
 
   return (
@@ -79,7 +79,7 @@ export function Day<TMessage extends IMessage = IMessage>({
         <Text style={[styles.text, textStyle]}>{dayLabel}</Text>
       </View>
     </View>
-  );
+  )
 }
 
 Day.propTypes = {
